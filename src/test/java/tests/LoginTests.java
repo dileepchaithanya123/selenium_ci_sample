@@ -34,10 +34,10 @@ public class LoginTests extends BasePage {
         loginPage.checkLoginPage();
         loginPage.enterUsername();
         loginPage.enterPassword();
-        loginPage.takeLoginPageScreenshot();
+        //loginPage.takeLoginPageScreenshot();
         loginPage.clickOnSubmitButton();
         homePage.checkHomePage();
-        homePage.takeHomePageScreenshot();
+        //homePage.takeHomePageScreenshot();
         homePage.clickOnLogoutButton();
     }
 
