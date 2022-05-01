@@ -1,5 +1,7 @@
 package pages;
 
+import core.utils.BasePage;
+import core.utils.ReadConstants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +11,7 @@ import org.openqa.selenium.io.FileHandler;
 import java.io.File;
 import java.io.IOException;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
     private WebDriver driver;
 
@@ -29,19 +31,17 @@ public class LoginPage {
     }
 
     public void enterUsername() {
-        driver.findElement(USERNAME_FIELD);
+        driver.findElement(USERNAME_FIELD).sendKeys(ReadConstants.prop.getProperty("UserId"));
     }
     public void enterPassword() {
-        driver.findElement(PASSWORD_FIELD);
+        driver.findElement(PASSWORD_FIELD).sendKeys(ReadConstants.prop.getProperty("Password"));
     }
     public void clickOnSubmitButton() {
-        driver.findElement(SUBMIT_BTN);
+        driver.findElement(SUBMIT_BTN).click();
     }
-
     public void clickOnResetButton() {
         driver.findElement(RESET_BTN);
     }
-
     public void takeLoginPageScreenshot() {
         WebElement elementLogo = driver.findElement(USERNAME_FIELD);
 

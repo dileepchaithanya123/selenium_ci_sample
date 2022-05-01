@@ -1,22 +1,22 @@
 package tests;
 
+import com.wiley.holders.DriverHolder;
 import core.utils.BasePage;
-import org.kohsuke.rngom.parse.host.Base;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 
-public class LoginTests extends BasePage {
-        private WebDriver driver;
+import static com.wiley.holders.DriverHolder.getDriver;
 
+public class LoginTests extends BasePage {
         private LoginPage loginPage;
         private HomePage homePage;
 
     private void initializeObjects(){
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage(DriverHolder.getDriver());
+        homePage = new HomePage(DriverHolder.getDriver());
 
     }
 
@@ -28,13 +28,14 @@ public class LoginTests extends BasePage {
     /**
      * Verify the Login Section
      */
-    @Test
+    @Test(description = "Login")
     public void verifyLoginFunctionality() {
+        initializeObjects();
         loginPage.checkLoginPage();
         loginPage.enterUsername();
         loginPage.enterPassword();
-        loginPage.clickOnSubmitButton();
         loginPage.takeLoginPageScreenshot();
+        loginPage.clickOnSubmitButton();
         homePage.checkHomePage();
         homePage.takeHomePageScreenshot();
         homePage.clickOnLogoutButton();
@@ -42,7 +43,7 @@ public class LoginTests extends BasePage {
 
     @AfterTest
     public void tearDown() {
-        driver.quit();
+        getDriver().quit();
     }
 
 

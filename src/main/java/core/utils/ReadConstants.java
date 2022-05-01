@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class ReadConstants {
 
-    static Properties prop = new Properties();
+    public static Properties prop = new Properties();
     
     public static void readProperties(){
 

@@ -1,5 +1,7 @@
 package pages;
 
+import core.utils.BasePage;
+import org.kohsuke.rngom.parse.host.Base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +11,7 @@ import org.openqa.selenium.io.FileHandler;
 import java.io.File;
 import java.io.IOException;
 
-public class HomePage {
+public class HomePage extends BasePage {
 
 
     private WebDriver driver;
@@ -20,6 +22,7 @@ public class HomePage {
 
     public HomePage(WebDriver driver){
         this.driver = driver;
+        init(driver);
     }
 
     public void checkHomePage() {
