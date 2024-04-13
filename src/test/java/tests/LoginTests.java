@@ -21,7 +21,7 @@ public class LoginTests extends BasePage {
     }
 
     @BeforeTest
-    public void initiateTest() {
+    public void initiateTest() throws InterruptedException {
         setUp();
     }
 

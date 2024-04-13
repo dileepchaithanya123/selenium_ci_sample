@@ -50,7 +50,7 @@ public class BasePage {
     public void openURL() {
         DriverHolder.getDriver().navigate().to(ReadConstants.prop.getProperty("url"));
     }
-    public void setUp() {
+    public void setUp() throws InterruptedException {
         ReadConstants.readProperties();
         String browserName = ReadConstants.prop.getProperty("browser");
         initiateBrowser(browserName);
