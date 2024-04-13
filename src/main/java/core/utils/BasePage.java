@@ -56,6 +56,7 @@ public class BasePage {
         initiateBrowser(browserName);
         openURL();
         maximizeWindow();
+        Thread.sleep(1000);
     }
 
     protected String getDataFromHashMap(Hashtable<String,String> dataTable,String Key) {
